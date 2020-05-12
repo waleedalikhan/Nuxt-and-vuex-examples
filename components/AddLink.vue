@@ -20,9 +20,20 @@ export default {
   },
 
   methods: {
-    addLinks(e) {
-      e.preventDefault();
-      this.$store.commit("links/addLink", this.form);
+    addLinks() {
+      alert("akhjvjasvfgasv");
+      const myForm = this.clone(this.form);
+      console.log(myForm);
+
+      this.$store.commit("links/addLink", myForm);
+    },
+    clone(obj) {
+      if (null == obj || "object" != typeof obj) return obj;
+      var copy = obj.constructor();
+      for (var attr in obj) {
+        if (obj.hasOwnProperty(attr)) copy[attr] = obj[attr];
+      }
+      return copy;
     }
   }
 };

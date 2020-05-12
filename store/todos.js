@@ -5,7 +5,7 @@ export const state = () => ({
 export const actions = {
 	async getTodos({ commit }) {
 		const response = await this.$axios.get('https://jsonplaceholder.typicode.com/todos');
-		commit('getAllTodos', response.data);
+		commit('getAllTodos', response.data.slice(1, 51));
 	}
 };
 
@@ -15,7 +15,6 @@ export const mutations = {
 	},
 	getAllTodos(state, todo) {
 		state.todos = todo;
-		console.log(state.todos);
 	},
 	addTodo(state, todo) {
 		const data = {
@@ -25,11 +24,9 @@ export const mutations = {
 			"completed": false
 		};
 		state.todos.push(data);
-		console.log(todo);
 	},
 	removeTodo(state, payload) {
 		state.todos.splice(payload, 1);
-		console.log(payload);
 	}
 };
 

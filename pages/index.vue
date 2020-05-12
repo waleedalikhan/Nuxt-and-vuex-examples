@@ -25,9 +25,7 @@ export default {
   },
   computed: {},
   created() {
-    if ((this.$store.state.todos.todos = !"")) {
-      this.$store.dispatch("todos/getTodos");
-    }
+    this.$store.dispatch("todos/getTodos");
   },
   methods: {
     deleteTodo() {
