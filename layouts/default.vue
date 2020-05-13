@@ -17,6 +17,7 @@
       <v-btn to="/">Todos</v-btn>
       <v-btn to="/links-manager" class="mx-6">Links Manager</v-btn>
       <v-btn to="/photos" class="mx-6">photos</v-btn>
+      <v-btn to="/table" class="mx-6">data table</v-btn>
     </v-app-bar>
     <v-content>
       <v-container>
